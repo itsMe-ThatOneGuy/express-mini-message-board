@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1= title
+    div
+        form(method="POST" action="/new")
+            div
+                label(for="user") Username
+                input(type="text" name="user")
+            div
+                label(for="message") Message
+                textarea(name="message" rows="4" cols="50")
+            div
+                input(type="submit" value="Submit")
+            
