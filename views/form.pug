@@ -8,14 +8,16 @@ block content
             for error in errors
                 li!= error.msg
 
+    a(href='/') Click to return to board without posting.
+
     div
         form(method="POST" action="")
             div
-                label(for="user_name") Username
+                label(for="user_name") #[strong Username:] 
                 input(type="text" name="user_name" placeholder='Username'
                     required='true' value=(undefined===message ? '' : message.user_name) )
             div
-                label(for="message") Message
+                label(for="message") #[strong Message:] 
                 textarea(name="message" rows="4" cols="50" placeholder='Message'
                     required='true' value=(undefined===message ? '' : message.message))
             div
