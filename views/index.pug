@@ -7,5 +7,5 @@ block content
 
   each message in message_list
     div
-        p #{message.user_name} #{message.date}
-        p #{message.message}
+        p #[strong !{message.user_name}] | #{message.date_formatted}
+        p - #{message.message}
