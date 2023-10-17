@@ -6,10 +6,12 @@ block content
         form(method="POST" action="")
             div
                 label(for="user_name") Username
-                input(type="text" name="user_name")
+                input(type="text" name="user_name" placeholder='Username'
+                    required='true' value=(undefined===message ? '' : message.user_name) )
             div
                 label(for="message") Message
-                textarea(name="message" rows="4" cols="50")
+                textarea(name="message" rows="4" cols="50" placeholder='Message'
+                    required='true' value=(undefined===message ? '' : message.message))
             div
                 input(type="submit" value="Submit")
             
