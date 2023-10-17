@@ -3,9 +3,9 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  a(href="/new") Click to Add a Message!
+  a(href="/messages/new") Click to Add a Message!
 
-  each message in messages
+  each message in message_list
     div
-        p #{message.user} #{message.added}
-        p #{message.text}
+        p #{message.user_name} #{message.date}
+        p #{message.message}

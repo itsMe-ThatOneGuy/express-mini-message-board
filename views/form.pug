@@ -3,10 +3,10 @@ extends layout
 block content
     h1= title
     div
-        form(method="POST" action="/new")
+        form(method="POST" action="")
             div
-                label(for="user") Username
-                input(type="text" name="user")
+                label(for="user_name") Username
+                input(type="text" name="user_name")
             div
                 label(for="message") Message
                 textarea(name="message" rows="4" cols="50")
