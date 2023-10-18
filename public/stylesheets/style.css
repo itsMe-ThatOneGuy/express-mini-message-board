@@ -1,8 +1,71 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+	overflow-x: hidden;
 }
 
 a {
-  color: #00B7FF;
+	color: #00b7ff;
+}
+
+#messageboard {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+		rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+	border-radius: 8px;
+	z-index: 1;
+	height: 90vh;
+	margin: 0px auto;
+}
+
+.messageboard-title {
+	text-align: center;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	background-color: grey;
+	border-radius: 9px;
+}
+
+.message-list-container {
+	padding: 0.5rem 9px 9px;
+}
+
+.message-details {
+	display: flex;
+	padding: 0px 10px;
+	border-radius: 9px;
+	justify-content: space-between;
+	align-items: flex-start;
+	background-color: whitesmoke;
+}
+
+.test-div-1 {
+	overflow: auto;
+}
+
+.text-input {
+	width: 800px;
+}
+
+form {
+	display: flex;
+}
+
+.form-container {
+	padding: 0.5rem 9px 9px;
+	background-color: grey;
+	border-radius: 9px;
+}
+
+.submit-btn {
+	height: 45px;
+	width: 110px;
+	margin-left: 0.5rem;
 }
