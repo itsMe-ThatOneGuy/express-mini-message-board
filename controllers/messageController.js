@@ -4,7 +4,10 @@ const { body, validationResult } = require('express-validator');
 
 exports.index = asyncHandler(async (req, res, next) => {
 	const allMessages = await Message.find().exec();
-	res.render('index', { title: 'Message Board', message_list: allMessages });
+	res.render('index', {
+		title: 'Mini Message Board',
+		message_list: allMessages,
+	});
 });
 
 exports.message_form_post = [
