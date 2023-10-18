@@ -1,11 +1,28 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  a(href="/messages/new") Click to Add a Message!
-
-  each message in message_list
-    div
-        p #[strong !{message.user_name}] | #{message.date_formatted}
-        p - #{message.message}
+  main#messageboard
+    div.messageboard-title
+        h1= title
+    div.test-div-1
+        div.message-list-container
+            each message in message_list
+                div.message-container
+                    div.message-details
+                        p #[strong !{message.user_name}]
+                        p #{message.date_formatted}
+                    div.message-content
+                        p #{message.message}
+    div.message-post-container
+        
+        div.form-container
+            form(method="POST" action="")
+                div.form-inputs
+                    div.input
+                        input.text-input(type="text" name="user_name" placeholder='Username'
+                            required='true' value=(undefined===message ? '' : message.user_name) )
+                    div.input
+                        input.text-input(type='text' name="message" placeholder='Message'
+                        required='true' value=(undefined===message ? '' : message.message))
+                div
+                    input.submit-btn(type="submit" value="Submit")
