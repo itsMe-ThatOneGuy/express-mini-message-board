@@ -10,6 +10,8 @@ body {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
+	width: 80vw;
+	margin: 2vh auto;
 }
 
 a {
@@ -25,6 +27,7 @@ a {
 	border-radius: 8px;
 	z-index: 1;
 	height: 90vh;
+	width: 80vw;
 	margin: 0px auto;
 }
 
@@ -55,7 +58,7 @@ a {
 }
 
 .text-input {
-	width: 800px;
+	width: 62vw;
 }
 
 form {
@@ -70,7 +73,7 @@ form {
 
 .submit-btn {
 	height: 45px;
-	width: 110px;
+	width: 14.5vw;
 	margin-left: 0.5rem;
 }
 
