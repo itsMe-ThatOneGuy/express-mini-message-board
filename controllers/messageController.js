@@ -10,6 +10,41 @@ exports.index = asyncHandler(async (req, res, next) => {
 	});
 });
 
+exports.message_post = [
+	body('user_name')
+		.trim()
+		.isLength({ min: 1 })
+		.escape()
+		.withMessage('Username must not be empty'),
+	body('message')
+		.trim()
+		.isLength({ min: 1 })
+		.escape()
+		.withMessage('Message must not be empty'),
+
+	asyncHandler(async (req, res, next) => {
+		const errors = validationResult(req);
+		const allMessages = await Message.find().exec();
+		const message = new Message({
+			user_name: req.body.user_name,
+			message: req.body.message,
+		});
+
+		if (!errors.isEmpty()) {
+			res.render('index', {
+				title: 'Mini Message Board',
+				message: message,
+				message_list: allMessages,
+				errors: errors.array(),
+			});
+			return;
+		} else {
+			await message.save();
+			res.redirect('/');
+		}
+	}),
+];
+
 exports.message_form_post = [
 	body('user_name')
 		.trim()
