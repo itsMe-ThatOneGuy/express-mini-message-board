@@ -4,7 +4,7 @@ block content
   main#messageboard
     div.messageboard-title
         h1= title
-    div.test-div-1
+    div.message-list-wrapper
         div.message-list-container
             each message in message_list
                 div.message-container
@@ -16,6 +16,11 @@ block content
     div.message-post-container
         
         div.form-container
+            if errors
+                ul
+                    for error in errors
+                        li!= error.msg
+
             form(method="POST" action="")
                 div.form-inputs
                     div.input
@@ -26,3 +31,4 @@ block content
                         required='true' value=(undefined===message ? '' : message.message))
                 div
                     input.submit-btn(type="submit" value="Submit")
+
