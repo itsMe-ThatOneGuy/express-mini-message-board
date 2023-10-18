@@ -16,7 +16,7 @@ You will need your own environment variables to run this app.
 
 `MONGODB_URI`
 
-This would your MongoDB connection, and can be added to an .env in the project root.
+This would be your MongoDB connection, and can be added to an .env in the project root.
 
 ### Install and Run
 
