@@ -5,6 +5,8 @@ const message_controller = require('../controllers/messageController');
 
 router.get('/', message_controller.index);
 
+router.post('/', message_controller.message_post);
+
 router.get('/new', message_controller.message_form_get);
 
 router.post('/new', message_controller.message_form_post);
